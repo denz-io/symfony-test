@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-    ntrs_mysql:
+    symfony_mysql:
         container_name: symfony_mysql
         image: mysql:5.7
         ports:
@@ -11,16 +11,16 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=root
         restart: always
-    ntrs:
+    symfony_test:
         container_name: symfony_test 
-        image: denzdacs/react-laravel5.5-env:latest 
+        image: denzdacs/symfony-env 
         ports:
-            - 8000:8000
+            - 8000:80
         volumes:
             - .:/var/www/site
         working_dir: /var/www/site
         depends_on:
-            - ntrs_mysql 
+            - symfony_mysql 
         restart: always
 volumes:
     db-data:

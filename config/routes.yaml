@@ -1,3 +1,16 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# config/routes.yaml
+home:
+    path: /
+    controller: App\Controller\Home::index
+about:
+    path: /about
+    controller: App\Controller\About:index
+logout:
+    path: /logout
+    controller: App\Controller\Auth::logout
+login:
+    path: /login
+    controller: App\Controller\Auth::login
+404:
+    path: /{wildcard}
+    controller: App\Controller\PageNotFound::index
