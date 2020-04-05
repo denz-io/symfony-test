@@ -8,9 +8,6 @@ about:
 logout:
     path: /logout
     controller: App\Controller\Auth::logout
-login:
-    path: /login
-    controller: App\Controller\Auth::login
 404:
     path: /{wildcard}
     controller: App\Controller\PageNotFound::index
